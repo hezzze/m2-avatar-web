@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script>
+      const segment = 1;
+      const redirects = {
+        '404.html': '/m2-avatar-web/',
+      };
+      
+      const pathname = window.location.pathname;
+      const redirect = redirects[pathname.split('/').pop() || ''] || '/m2-avatar-web/';
+      
+      window.location.replace(redirect + window.location.search + window.location.hash);
+    </script>
+  </head>
+  <body>
+    Redirecting to main page...
+  </body>
+</html> 
